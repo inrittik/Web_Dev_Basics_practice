@@ -1,0 +1,24 @@
+.highlight{
+    background-color: yellow;
+}
+
+.error{
+    background-color: lightcoral;
+    border: red;
+}
+
+/* h1{
+    text-align: center;
+} */
+
+/* .gameSpace{
+    display: flex;
+    margin: 30px 100px;
+    position: absolute;
+    left: 20vw;
+    background-color: rgb(224, 223, 223);
+    height: 30%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+} */
