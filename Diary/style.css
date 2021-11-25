@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+}
+html { overflow-y: scroll; }
+body { position: absolute; }
+/* .navbar{
+    display: block;
+    height: 10vh;
+    width: auto;
+    background-color:blueviolet;
+    color:white;
+}
+.navbar a{
+    text-decoration: none;
+    color:white;
+}
+.navbar ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.navbar ul li{
+    text-decoration: none;
+    margin: 20px;
+    font-size: 22px;
+    list-style-type: none;
+    text-align:start;
+} */
+.main-container{
+    position: fixed;
+    background-color: rgb(44, 38, 102);
+    color:white;
+    height: 100vh;
+    width: 100%;
+}
+.main-container .pageTitle{
+    text-align: center;
+    margin-top: 20px;
+}
+.main-container .entry{
+    width: 60%;
+    text-align: center;
+    margin: 10vh auto;
+}
+/* .main-container .entry .header .title{
+    color: rgb(245, 82, 32);
+} */
+.main-container .entry .entry-content{
+    display: inline-block;
+    width: 60%;
+    padding: 15px;
+    height: 5vh;
+    text-align: justify;
+    font-size: 20px;
+    background: rgb(56, 48, 124);
+    color:white;
+    border-radius: 8px;
+}
+.create-entry{
+    width: 60vw;
+    /* text-align: center; */
+    margin: 20px auto;
+}
+
+.create-entry form .content-section{
+    justify-content: space-around;
+    display: flex;
+}
+
+.create-entry form .content-section input{
+    padding: 15px;
+    height: 5vh;
+    width: 70%;
+    font-size: 20px;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(33, 29, 75);
+    color: white;
+}
+.content{
+    text-align: center;
+    margin: 0 auto;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.search-entry{
+    width: 60vw;
+    /* text-align: center; */
+    margin: 20px auto;
+}
+.search-entry form .content-section{
+    justify-content: space-around;
+    display: flex;
+}
+.search-entry form .content-section input{
+    padding: 15px;
+    height: 5vh;
+    width: 70%;
+    font-size: 20px;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(33, 29, 75);
+    color: white;
+}
+.delete{
+    cursor: pointer;
+}
