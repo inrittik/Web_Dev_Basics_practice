@@ -4,6 +4,7 @@ const deleteBotton = document.querySelector('.delete');
 const button = document.querySelector('button');
 const popup = document.querySelector('.popup-wrapper');
 const popupClose = document.querySelector('.popup-close');
+const search = document.querySelector('.search-entry input');
 
 const generateTemplate = (body) => {
     const template = `
@@ -27,11 +28,7 @@ newEntry.addEventListener('submit', e=>{
         newEntry.new_entry.value = "";
     }
 })
-// console.log(entryList);
-// deleteBotton.addEventListener('click', e => {
-//     // console.log(e.target.parentNode);
-//     e.target.parentNode.remove();
-// })
+
 entryList.addEventListener('click', e=> {
     console.log(e);
     let node = e.target.parentNode;
@@ -42,10 +39,7 @@ entryList.addEventListener('click', e=> {
             node.remove()
         }
     }
-    // button.addEventListener('click', ()=> {
-    //     popup.style.display = 'none';
-    //     node.remove()
-    // })
+    
 })
 
 
@@ -54,8 +48,30 @@ popupClose.addEventListener('click', ()=> {
 })
 
 popup.addEventListener('click', e=> {
-    // popup.style.display = 'none';
     if(e.target === popup){
         popup.style.display = 'none';
     }
+})
+
+const searchTodo = (key) => {
+    Array.from(entryList.children)
+        .filter(todo => {
+            return !todo.textContent.toLowerCase().includes(key);
+        })
+        .forEach(todo => {
+            todo.classList.add('filtered');
+        })
+
+    Array.from(entryList.children)
+        .filter(todo => {
+            return todo.textContent.toLowerCase().includes(key);
+        })
+        .forEach(todo => {
+            todo.classList.remove('filtered');
+        })
+}
+
+search.addEventListener('keyup', () => {
+    const key = search.value.toLowerCase();
+    searchTodo(key);
 })
