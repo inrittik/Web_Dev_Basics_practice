@@ -1,7 +1,9 @@
 const newEntry = document.querySelector('.createForm');
-// console.log(newEntry);
 const entryList = document.querySelector('.content');
 const deleteBotton = document.querySelector('.delete');
+const button = document.querySelector('button');
+const popup = document.querySelector('.popup-wrapper');
+const popupClose = document.querySelector('.popup-close');
 
 const generateTemplate = (body) => {
     const template = `
@@ -32,7 +34,28 @@ newEntry.addEventListener('submit', e=>{
 // })
 entryList.addEventListener('click', e=> {
     console.log(e);
+    let node = e.target.parentNode;
     if(e.target.classList.contains('delete')){
-        e.target.parentNode.remove()
+        popup.style.display = 'block';
+        button.onclick = ()=>{
+            popup.style.display = 'none';
+            node.remove()
+        }
+    }
+    // button.addEventListener('click', ()=> {
+    //     popup.style.display = 'none';
+    //     node.remove()
+    // })
+})
+
+
+popupClose.addEventListener('click', ()=> {
+    popup.style.display = 'none';
+})
+
+popup.addEventListener('click', e=> {
+    // popup.style.display = 'none';
+    if(e.target === popup){
+        popup.style.display = 'none';
     }
 })
