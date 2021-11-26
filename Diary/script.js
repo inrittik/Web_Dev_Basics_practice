@@ -5,7 +5,7 @@ const button = document.querySelector('button');
 const popup = document.querySelector('.popup-wrapper');
 const popupClose = document.querySelector('.popup-close');
 const search = document.querySelector('.search-entry input');
-let key=0;
+
 const generateTemplate = (body) => {
     const template = `
     <div class="entry">
@@ -19,24 +19,13 @@ const generateTemplate = (body) => {
     `;
     entryList.innerHTML += template;
 }
-// console.log(entryList.children);
-// const entries = Array.from(entryList.children);
+
+localStorage.setItem('todos', localStorage.getItem('todos'));
 const todos = JSON.parse(localStorage.getItem('todos'));
-
-// entries.forEach(entry => {
-//     todos.push(entry.childNodes[1].innerText);
-// })
-// localStorage.setItem('todos', JSON.stringify(todos));
-
-
-// const storageValues = JSON.parse(localStorage.getItem('todos'));
-// console.log(storageValues);
-// storageValues.forEach(value=> {
-//     generateTemplate(value);
-// })
-JSON.parse(localStorage.getItem('todos')).forEach(value=> {
+todos.forEach(value=>{
     generateTemplate(value);
 })
+
 newEntry.addEventListener('submit', e=>{
     e.preventDefault();
     const entryText = newEntry.new_entry.value.trim();   
@@ -52,14 +41,11 @@ newEntry.addEventListener('submit', e=>{
 })
 
 entryList.addEventListener('click', e=> {
-    // console.log(e);
     let node = e.target.parentNode;
     if(e.target.classList.contains('delete')){
         popup.style.display = 'block';
         button.onclick = ()=>{
             popup.style.display = 'none';
-            // node.remove()
-            console.log(node.childNodes[1].textContent.trim());
             let i=0;
             todos.forEach(todo => {
                 if(todo===node.childNodes[1].textContent.trim()){
@@ -69,6 +55,7 @@ entryList.addEventListener('click', e=> {
             })
             localStorage.setItem('todos', JSON.stringify(todos));
             location.reload();
+            console.log(todos);
         }
     }
 })
