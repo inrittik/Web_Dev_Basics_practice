@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="pageTitle">
+            <h1>TODOS</h1>
+        </div>
+
+        <!-- <button>click me</button> -->
+        <div class="search-entry">
+            <form class="searchForm">
+                <div class="content-section">
+                    <input type="text" name="search" id="search" placeholder="search todos"></input>
+                </div>
+            </form>
+        </div>
+
+        <div class="content">
+        </div>
+
+
+        <div class="create-entry">
+            <form class="createForm">
+                <div class="content-section">
+                    <input type="text" name="new_entry" id="new_entry" placeholder="enter todo"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="popup-wrapper">
+        <div class="popup">
+            <div class="popup-close">x</div>
+            <h2>Are you sure you want to delete this?</h2>
+            <button>confirm</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
